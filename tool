@@ -25,6 +25,8 @@ while not character:IsDescendantOf(game.Workspace) do
 	wait()
 end
 --애니메이션을 플레이어 리그의 올바른 리그 유형으로 설정합니다.
+--r15 6420878474
+--r6 704172536
 local rigType = humanoid.RigType
 local swing = nil 
 if rigType == Enum.HumanoidRigType.R15 then
