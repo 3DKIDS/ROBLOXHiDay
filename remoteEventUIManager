@@ -1,0 +1,18 @@
+-- player info
+local Players = game:GetService("Players")
+-- Below: access Players.LocalPlayer; 
+-- if it is nil, we'll wait for it using GetPropertyChangedSignal.
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):wait()
+
+--RemoteEvent
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local makePartEvent = ReplicatedStorage:WaitForChild("MakePartEvent")
+-- Screen
+local screenGui = script.Parent
+local button = screenGui.Frame.TextButton
+
+-- button click
+button.Activated:Connect(function()
+	--print(player.Name)
+	makePartEvent:FireServer()
+end)
